@@ -41,6 +41,8 @@ header {
 .header__logo {
     grid-column: 2/3;
     display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 .header__logo-image {
@@ -59,6 +61,7 @@ header {
     font-size: 18px;
     font-weight: 400;
     line-height: 24.3px;
+    font-style: normal;
 }
 
 .header__contacts {
@@ -96,6 +99,8 @@ header {
     z-index: 1;
 }
 
+/* Ниже идут теги для стилизации заголовка "Оно тебе надо" */
+
 .accent-span {
     display: block;
     color: #FFF;
@@ -110,11 +115,13 @@ header {
 .text-center {
     text-align: center;
     line-height: 135%;
+    letter-spacing: 31px;
 }
 
 .text-end {
-    line-height: 104%;
     text-align: end;
+    line-height: 106%;
+    letter-spacing: 29px;
 }
 
 .accent-letter-spacing {
@@ -124,6 +131,8 @@ header {
 .accent-letter-spacing-none {
     letter-spacing: 0;
 }
+
+/* Конец секции с тегами для стилизации заголовка "Оно тебе надо" */
 
 .title__discription {
     align-items: center;
@@ -163,10 +172,14 @@ header {
     background: none;
 }
 
+.bet-button:hover {
+    cursor: pointer;
+}
+
 .lots {
     display: grid;
     grid-template-rows: 74px 1fr 53px;
-    margin: 0 auto;
+    margin: 0 auto 177px auto;
     width: 1034px;
     height: 682px;
 }
@@ -182,6 +195,8 @@ header {
     font-weight: 700;
     text-transform: uppercase;
 }
+
+/* В тегах .lots__card-list и .lots__card-list-item также реализовал возможность добавления карточек в будующем без изменения CSS кода */
 
 .lots__card-list {
     grid-column: 1/1;
@@ -251,6 +266,10 @@ header {
     line-height: 120%;
 }
 
+.card__text::first-line {
+    line-height: 100%;  /* Попытка исправить баг в макете с налезающими друг на друга блоками */
+}
+
 .lots__more-information-link {
     grid-column: 1/1;
     grid-row: 3/4;
@@ -263,4 +282,111 @@ header {
 
 .lots__more-information-link a {
     font-size: 20px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 328px 1fr;
+    grid-template-rows: 237px 1fr;
+    column-gap: 25px;
+    row-gap: 7px;
+    margin: 0 auto 181px auto;
+    padding-left: 25px;
+    width: 1082px;
+    height: 546px;
+}
+
+.about__logo {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: center;
+    display: flex;
+    width: 237px;
+    height: 237px;
+    border-radius: 237px;
+    background-color: #000;
+}
+
+.about__logo-image {
+    margin: auto;
+    width: 148px;
+    height: 114px;
+}
+
+.about__title {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+}
+
+.about__title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.about__text {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.about__text p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 115%;
+}
+
+.about__text p:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto 89px auto;
+    width: 984px;
+    height: 97px;
+}
+
+.footer__contacts {
+    grid-column: 1/2;
+    justify-self: start;
+    align-self: center;
+}
+
+.footer__menu {
+    grid-column: 2/3;
+    justify-self: center;
+    align-self: flex-start;
+}
+
+.footer__menu-list {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    list-style: none;
+}
+
+.footer__menu-list-item {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.footer__list-item_active a {
+    text-decoration: none;
+}
+
+.footer__social-list {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    gap: 46px;
+    list-style: none;
+}
+
+.footer__social-icon {
+    width: 48px;
 }
